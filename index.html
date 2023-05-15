@@ -123,10 +123,16 @@
                         <script>
                             dir = "./assets/wavs/hiddensinger"
                             exp = {"GT": "gt",
-                                   "Recon. with RVQ": "gt_recon",
+                                   "Audio Autoencoder (Recon.)": "recon",
                                    "HiddenSinger": "hs",
                                    "HiddenSinger-U": "hs_u"}
                             audios = {
+                                "C0019_18": {"script": "다 같이 모두 모여",
+                                             "pronun": "da gat-i modu moyeo"},
+                                "C0300_12": {"script": "아 그댈 바라만 보는게 힘들어서",
+                                             "pronun": "a geudael balaman boneunge himdeul-eoseo"},
+                                "C0726_7": {"script": "서로를 향해 다가갔지",
+                                             "pronun": "seolol hyanghae dagagassji"},
                             }
                             for(var audio in audios){
                                 div = document.getElementById("div1")
@@ -152,16 +158,24 @@
                 <div class="row">
                     <div id="div2" class="col-lg-auto ml-auto">
                         <script>
-                            dir = "./assets/wavs/comparison"
+                            dir = "./assets/wavs/compare"
                             exp = {"GT": "gt",
-                                   "HiFi-GAN": "hifigan",
-                                   "FastSpeech 2": "fastspeech",
-                                   "DiffSinger": "diffsinger",
-                                   "VISinger": "visinger",
-                                   "HiddenSinger": "hiddensinger",
-                                   "HiddenSinger": "hiddensinger_u",
+                                   "HiFi-GAN (Recon.)": "hifi",
+                                   "FastSpeech 2": "fast",
+                                   "DiffSinger": "diff",
+                                   "VISinger": "vi",
+                                   "HiddenSinger": "hs",
+                                   "HiddenSinger-U": "hs_u",
                                 }
                             audios = {
+                                "C0748_9": {"script": "쓸쓸하게 비추는 거야",
+                                            "pronun": "sseulsseulhage bichuneun geoya"},
+                                "C1936_12": {"script": "나름대로 빛났을테니",
+                                             "pronun": "naleumdaelo bichnass-eulteni"},
+                                "C3219_9": {"script": "멋지지 않나요 뭔가를 사랑했던",
+                                            "pronun": "meosjiji anhnayo mwongal salanghaessdeon"},
+                                "C3679_19": {"script": "쉬게 해줘요 그대 사랑이",
+                                             "pronun": "swige haejwoyo geudae salang-i"},
                             }
                             for(var audio in audios){
                                 div = document.getElementById("div2")
@@ -181,7 +195,7 @@
           <div class="container">
               <!-- About Section Heading-->
               <div class="text-center">
-                  <h2 class="page-section-heading d-inline-block text-white">Audio Autoencoder</h2>
+                  <h2 class="page-section-heading d-inline-block text-white">Reconstruction of Audio Autoencoder</h2>
               </div>
               <br>
               <!-- Samlpe of Audio Autoencoder -->
@@ -191,13 +205,18 @@
                           dir = "./assets/wavs/recon"
                           exp = {"GT": "gt",
                                  "HiFi-GAN": "hifi",
-                                 "VISinger (recon.)": "visinger",
-                                 "Autoencoder w/o reg.": "naive",
-                                 "Autoencoder w/ KL-reg.": "kl",
-                                 "Autoencoder w/ RVQ-reg.": "rvq",
+                                 "VISinger (recon.)": "vi",
+                                 "Autoencoder w/o reg.": "ae_naive",
+                                 "Autoencoder w/ KL-reg.": "ae_kl",
+                                 "Autoencoder w/ RVQ-reg.": "ae_rvq",
                               }
                           audios = {
-                            
+                            "C0076_8": {"script": "여기저기 뛰어도 보고",
+                                        "pronun": "yeogijeogi ttwieodo bogo"},
+                            "C0884_14": {"script": "모두 다 잊혀",
+                                         "pronun": "modu da ijhyeo"},
+                            "C1967_23": {"script": "너에게 난 빠져있는거야",
+                                         "pronun": "neoege nan ppajyeoissneungeoya"},
                           }
                           for(var audio in audios){
                               div = document.getElementById("div3")
@@ -223,13 +242,18 @@
               <div class="row">
                   <div id="div4" class="col-lg-auto ml-auto">
                       <script>
-                          dir = "./assets/wavs/combination_lg"
+                          dir = "./assets/wavs/autoenc"
                           exp = {"GT": "gt",
                                  "Latent Generator w/o reg.": "naive",
                                  "Latent Generator w/ KL-reg.": "kl", 
                                  "Latent Generator w/ RVQ-reg. (proposed)": "rvq"}
                           audios = {
-                            
+                            "C0155_2": {"script": "오늘은 무얼하고 놀까요",
+                                        "pronun": "oneul-eun mueolhago nolkkayo"},
+                            "C1417_11": {"script": "우리의 스토리 love me love",
+                                         "pronun": "uliui story love me love"},
+                            "C1781_21": {"script": "해준 것만 생각나",
+                                         "pronun": "haejun geonman saeng-gagna"},
                           }
                           for(var audio in audios){
                               div = document.getElementById("div4")
@@ -256,22 +280,27 @@
                 <div class="row">
                     <div id="div5" class="col-lg-auto ml-auto">
                         <script>
-                            dir = "./assets/wavs/unsupervised"
+                            dir = "./assets/wavs/unsuper"
                             exp = {"GT": "gt",
-                                   "HiddenSinger-U 0% (HiddenSinger)": "hs",
-                                   "HiddenSinger-U 2% (HiddenSinger)": "hs_02",
-                                   "HiddenSinger-U 5% (HiddenSinger)": "hs_05",
-                                   "HiddenSinger-U 10% (HiddenSinger)": "hs_10",
-                                   "HiddenSinger-U 20% (HiddenSinger)": "hs_20",
-                                   "HiddenSinger-U 50% (HiddenSinger)": "hs_50",
+                                   "Unlabeld Ratio: 0% (HiddenSinger)": "hs",
+                                   "Unlabeld Ratio: 2%": "hs_02",
+                                   "Unlabeld Ratio: 5%": "hs_05",
+                                   "Unlabeld Ratio: 10% (HiddenSinger-U)": "hs_10",
+                                   "Unlabeld Ratio: 20%": "hs_20",
+                                   "Unlabeld Ratio: 50%": "hs_50",
                                 }
                             audios = {
-                               
+                                "C0031_26": {"script": "멋진 어린이가 될래",
+                                             "pronun": "meotjin eolin-iga doellae"},
+                                "C0171_25": {"script": "내 머리속엔 너 밖에 없어",
+                                             "pronun": "nae meolisog-en neo bakk-e eobs-eo"},
+                                "C2794_21": {"script": "왜 이리 찬란해 왜 또 나는 너를",
+                                             "pronun": "wae ili chanlanhae wae tto naneun neoleul"},
                             }
                             for(var audio in audios){
                                 div = document.getElementById("div5")
                                 script=audios[audio]
-                                html = createTable(dir, exp, audio, script, 0, row=2)
+                                html = createTable(dir, exp, audio, script, 0, row=4)
                                 // console.log(html)
                                 div.insertAdjacentHTML("afterend", html);
                             }
@@ -294,18 +323,23 @@
                         <script>
                             dir = "./assets/wavs/abl"
                             exp = {"GT": "gt",
-                                   "HiddenSinger": "hidden",
-                                   "w/o Enhanced Prior Encoder": "no_enhance",
-                                   "w/ z_{q} Generation": "zq_generation",
-                                   "w/ Standard Gaussian Prior": "standard_gaussian",
+                                   "HiddenSinger": "hs",
+                                   "w/o Enhanced Prior Encoder": "no_ce",
+                                   "w/ z_q Generation": "zq",
+                                   "w/ Standard Gaussian Prior": "gaussian",
                                   }
                             audios = {
-                                
+                                "C0329_8": {"script": "볼 수 있었던 너의 표정",
+                                            "pronun": "bol su iss-eossdeon neoui pyojeong"},
+                                "C0904_8": {"script": "그대 날 떠나면",
+                                            "pronun": "geudae nal tteonamyeon"},
+                                "C2541_16": {"script": "난 다시 나는 널 못 잊어",
+                                             "pronun": "nan dasi naneun neol mos ij-eo"},
                             }
                             for(var audio in audios){
                                 div = document.getElementById("div6")
                                 script=audios[audio]
-                                html = createTable(dir, exp, audio, script, 2, row=3)
+                                html = createTable(dir, exp, audio, script, 3, row=4)
                                 // console.log(html)
                                 div.insertAdjacentHTML("afterend", html);
                             }
